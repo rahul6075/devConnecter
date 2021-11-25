@@ -31,6 +31,8 @@ router.get("/me", auth, async (req, res) => {
   }
 });
 
+
+
 // @route   POST api/profile
 // @desc    Create or Update profile
 // @access  Private
@@ -109,19 +111,22 @@ router.post(
   }
 );
 
+
 //@route   GET api/profile
 //@desc    Get All Profiles
 //@access  Public
 
-router.get("/", async (req, res) => {
+router.get('/all', async (req, res) => {
   try {
-    const profiles = await Profile.find().populate("user", ["name", "avatar"]);
+    const profiles = await Profile.find().populate('user', ['name', 'avatar']);
     res.json(profiles);
+    console.log(profiles);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("Server Error");
+    res.status(500).send('Server Error');
   }
 });
+
 
 //@route   GET api/profile/user/user_id
 //@desc    Get  Profiles By User ID
@@ -188,15 +193,8 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      title,
-      company,
-      location,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { title, company, location, from, to, current, description } =
+      req.body;
 
     const newExp = {
       title,
@@ -262,15 +260,8 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      school,
-      degree,
-      fieldofstudy,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { school, degree, fieldofstudy, from, to, current, description } =
+      req.body;
 
     const newEdu = {
       school,

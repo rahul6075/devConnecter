@@ -1,0 +1,23 @@
+**** Docerize the Application ****
+1. Run baseline application
+2. Docerize api Server
+3. Docerize react client
+4. Set up docker compose
+5. Find public mongo image
+6. Enable hot reloading by mounting src
+
+**** Productionize ****
+
+1. Break out seprate docker compose files
+2. Move DB to Atlas 
+3. Update clent Dockerfile to build production version
+4. Use Caddy to serve front and end fields
+5. Parameterize connection strings
+6. Split the local and production configurations 
+
+**** Deployment ****
+1. create digital ocean VM .
+2. Configure DNS for digital Ocean
+3. Configure Network access in Atlas
+4. Configure Caddy 
+5. Deploy!

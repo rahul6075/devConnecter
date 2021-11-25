@@ -38,7 +38,7 @@ function CommentItem({
 }
 
 CommentItem.propTypes = {
-  postId: PropTypes.number.isRequired,
+  postId: PropTypes.string.isRequired,
   comment: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   deleteComment: PropTypes.func.isRequired,
@@ -48,3 +48,5 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 export default connect(mapStateToProps, { deleteComment })(CommentItem);
+
+

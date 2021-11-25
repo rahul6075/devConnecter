@@ -5,6 +5,7 @@ import {
   UPDATE_PROFILE,
   GET_PROFILES,
   GET_REPOS,
+  PROFILES_ERROR,
 } from "../actions/types";
 
 const initialState = {
@@ -32,6 +33,11 @@ export default function (state = initialState, action) {
         profiles: payload,
         loading: false,
       };
+      case PROFILES_ERROR:
+      return {
+        profiles: [],
+        loading: false,
+      }; 
     case PROFILE_ERROR:
       return {
         ...state,
